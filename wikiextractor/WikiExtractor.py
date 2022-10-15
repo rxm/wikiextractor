@@ -545,7 +545,7 @@ def main():
                         help="maximum bytes per output file (default %(default)s); 0 means to put a single article per file",
                         metavar="n[KMG]")
     groupO.add_argument("-c", "--compress", action="store_true",
-                        help="compress output files using bzip")
+                        help="compress output files using gzip")
     groupO.add_argument("--json", action="store_true",
                         help="write output in json format instead of the default <doc> format")
 

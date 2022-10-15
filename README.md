@@ -94,7 +94,7 @@ Output:
 			    directory for extracted files (or '-' for dumping to stdout)
   -b n[KMG], --bytes n[KMG]
 			    maximum bytes per output file (default 1M)
-  -c, --compress        compress output files using bzip
+  -c, --compress        compress output files using gzip
   --json                write output in json format instead of the default <doc> format
 
 Processing:
@@ -151,7 +151,7 @@ Output:
                         stdin)
   -b n[KMG], --bytes n[KMG]
                         maximum bytes per output file (default 1M)
-  -c, --compress        compress output files using bzip
+  -c, --compress        compress output files using gzip
 
 Processing:
   -ns ns1,ns2, --namespaces ns1,ns2
