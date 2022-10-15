@@ -55,6 +55,7 @@ collecting template definitions.
 
 import argparse
 import bz2
+import gzip
 import logging
 import os.path
 import re  # TODO use regex when it will be standard
@@ -154,7 +155,7 @@ class OutputSplitter():
         :param nextFile: a NextFile object from which to obtain filenames
             to use.
         :param max_file_size: the maximum size of each file.
-        :para compress: whether to write data with bzip compression.
+        :para compress: whether to write data with gzip compression.
         """
         self.nextFile = nextFile
         self.compress = compress
@@ -169,7 +170,7 @@ class OutputSplitter():
     def write(self, data):
         self.reserve(len(data))
         if self.compress:
-            self.file.write(data)
+            self.file.write(data.encode('utf8'))
         else:
             self.file.write(data)
 
@@ -178,7 +179,7 @@ class OutputSplitter():
 
     def open(self, filename):
         if self.compress:
-            return bz2.BZ2File(filename + '.bz2', 'w')
+            return gzip.GzipFile(filename + '.gz', mode='w')
         else:
             return open(filename, 'w')
 
@@ -518,6 +519,8 @@ def reduce_process(output_queue, output):
                 break
             ordinal, text = pair
             ordering_buffer[ordinal] = text
+
+    output.close()        
 
 
 # ----------------------------------------------------------------------
