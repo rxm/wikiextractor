@@ -50,3 +50,7 @@ G*
 Session.vim
 .netrwhist
 *~
+
+# Mercurial
+.hg
+.hgignore

@@ -123,6 +123,8 @@ of expanding [MediaWiki templates](https://www.mediawiki.org/wiki/Help:Templates
 
 For further information, visit [the documentation](http://attardi.github.io/wikiextractor).
 
+The namespaces are identified by the text preceeding the colon.  For example, adding the user pages to the extraction from the Corsican wikipedia requires adding the namespace `Utente` and not its number, which is 2 according to the siteinfo section of the dump.
+
 ### Cirrus Extractor
 
 ~~~
